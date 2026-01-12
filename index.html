@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>THE 20K LEGACY WALL</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+</head>
+<body>
+
+<header class="main-header">
+    <div class="top-bar">
+        <div class="payment-group">
+            <button class="pay-btn b-uid" onclick="copyText('912221034')">BINANCE ID: 912221034 <i class="far fa-copy"></i></button>
+            <button class="pay-btn u-trc" onclick="copyText('TTapBkTqrDnzHbWzek6wSBUTcJKFmR8Ws6')">USDT (TRC20) <i class="far fa-copy"></i></button>
+        </div>
+        <div class="social-icons-only">
+            <a href="https://instagram.com/the20klegacywall" target="_blank" class="ig-c"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/the20klegacywall" target="_blank" class="tw-c"><i class="fab fa-twitter"></i></a>
+            <a href="https://youtube.com/the20klegacywall" target="_blank" class="yt-c"><i class="fab fa-youtube"></i></a>
+            <a href="https://tiktok.com/@the20klegacywall" target="_blank" class="tk-c"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </div>
+    
+    <div class="brand-section">
+        <h1 class="glow-text">THE 20K LEGACY WALL</h1>
+        <div class="counter-box">
+            <span>TOTAL: 20,000</span> | <span>SOLD: <b id="sold-count">0</b></span> | <span>REMAINING: <b id="rem-count">20,000</b></span>
+        </div>
+    </div>
+
+    <div class="notice-strip">
+        <marquee scrollamount="6">One-time payment for lifetime visibility! Enjoy 5 years of non-stop social media promotion for your brand by sending us your video and links on WhatsApp.</marquee>
+    </div>
+</header>
+
+<div id="viewport">
+    <div id="mover">
+        <canvas id="mainCanvas"></canvas>
+    </div>
+</div>
+
+<footer class="bottom-sticky">
+    <a href="order.html" class="buy-now">OWN A PIECE OF LEGACY ($20)</a>
+    <p class="copyright">The20KLegacyWall © 2005 KAWSAR. All rights reserved. I am not responsible for the content of external sites. Images featured on LegacyWall are © of their respective owners.</p>
+</footer>
+
+<a href="https://wa.me/8801576940717" class="wa-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script src="script.js"></script>
+</body>
+</html>
