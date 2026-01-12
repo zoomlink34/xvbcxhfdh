@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body style="background:#000; color:#fff; font-family:sans-serif; display:flex; justify-content:center; align-items:center; height:100vh; margin:0;">
+    <div style="background:#111; border:2px solid #333; padding:30px; text-align:center; width:300px; border-radius:10px;">
+        <div id="form-box">
+            <h2 style="color:#facc15">OWN YOUR PLOT</h2>
+            <input type="text" id="brand" placeholder="Your Brand Name" style="width:90%; padding:12px; margin:20px 0; background:#000; color:#fff; border:1px solid #444; border-radius:5px;">
+            <button onclick="submitData()" style="width:100%; padding:12px; background:#ef4444; color:#fff; border:none; font-weight:bold; cursor:pointer;">CONFIRM & SUBMIT</button>
+            <br><br>
+            <a href="index.html" style="color:#888; text-decoration:none; font-size:13px;">← Back to Home</a>
+        </div>
+        <div id="success-box" style="display:none;">
+            <h1 style="color:#22c55e">SUCCESSFUL!</h1>
+            <p>Your request is received by CEO Kawsar. Please pay and contact WhatsApp.</p>
+            <button onclick="window.location.href='index.html'" style="margin-top:20px; padding:10px 20px; background:#444; color:#fff; border:none; border-radius:5px; cursor:pointer;">BACK TO HOME</button>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+    <script>
+        firebase.initializeApp({databaseURL: "https://the-10-million-pixels-plus-default-rtdb.firebaseio.com/"});
+        function submitData() {
+            const name = document.getElementById('brand').value;
+            if(!name) return alert("Please enter brand name");
+            const orderId = Date.now();
+            firebase.database().ref('pending_orders/' + orderId).set({
+                name: name,
+                plotID: Math.floor(Math.random() * 20000),
+                status: "pending"
+            }).then(() => {
+                document.getElementById('form-box').style.display = 'none';
+                document.getElementById('success-box').style.display = 'block';
+            }).catch(e => alert("Error: " + e.message));
+        }
+    </script>
+</body>
+</html>
